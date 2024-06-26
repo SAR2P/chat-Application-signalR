@@ -1,0 +1,106 @@
+﻿@page "/Account/Register"
+
+<h1>Register</h1>
+<div class="Row">
+    <div class="col-md-4">
+        @(Message != "" ? Message : "")
+
+        <section>
+            <EditForm Model="registerModel" method="post" OnValidSubmit="RegisterAsync" FormName="Register">
+
+                <DataAnnotationsValidator />
+
+                <ValidationSummary class="text-danger" role="alert" />
+
+                <div class="form-floating mb-3">
+                    <InputText @bind-Value="registerModel.FullName" class="form-control" autocomplete="current-FullName"
+                               aria-required="true" placeholder="name soheil" />
+
+                    <label for="FullName" class="form-label">FullName</label>
+                    <ValidationMessage For="() => registerModel.FullName" class="text-danger" />
+                </div>
+
+                <div class="form-floating mb-3">
+                    <InputText type="Email" @bind-Value="registerModel.Email" class="form-control" autocomplete="current-email"
+                               aria-required="true" placeholder="Email" />
+
+                    <label for="Email" class="form-label">Email</label>
+                    <ValidationMessage For="() => registerModel.Email" class="text-danger" />
+                </div>
+
+                <div class="form-floating mb-3">
+                    <InputText type="password" @bind-Value="registerModel.Password" class="form-control" autocomplete="current-password"
+                               aria-required="true" placeholder="password" />
+
+                    <label for="password" class="form-label">Password</label>
+                    <ValidationMessage For="() => registerModel.Password" class="text-danger" />
+                </div>
+
+                <div class="form-floating mb-3">
+                    <InputText type="password" @bind-Value="registerModel.ConfirmPassword" class="form-control" autocomplete="current-confirm-password"
+                               aria-required="true" placeholder="confirm-password" />
+
+                    <label for="confirm-password" class="form-label">confirm password</label>
+                    <ValidationMessage For="() => registerModel.ConfirmPassword" class="text-danger" />
+                </div>
+
+                <div>
+                    <button type="submit" class="w-100 btn btn-lg btn-primary">Register</button>
+                </div>
+
+            </EditForm>
+        </section>
+
+    </div>
+
+</div>
+
+
+
+
+
+
+
+@code {
+    string Message = "";
+
+    [SupplyParameterFromForm]
+    RegisterModel registerModel { get; set; } = new();
+
+
+    async Task RegisterAsync()
+    {
+        var appUser = new AppUser()
+            {
+                FullName = registerModel.FullName,
+                Email = registerModel.Email,
+                PasswordHash = registerModel.Password,
+                UserName = registerModel.Email
+            };
+
+        var result = await userManager.CreateAsync(appUser, registerModel.Password);
+        if (!result.Succeeded)
+        {
+            Message = "Error occurd while creating the account, Please check your password contains CAPITAL WORDS And SPETIAL-CHARACTURS";
+            return;
+        }
+        NavManager.NavigateTo("/Account/Login");
+    }
+
+
+    public class RegisterModel
+    {
+        [Required]
+        public string FullName { get; set; } = string.Empty;
+
+        [Required, EmailAddress]
+        public string Email { get; set; } = string.Empty;
+
+        [Required]
+        public string Password { get; set; } = string.Empty;
+
+        [Compare(nameof(Password)), Required]
+        public string ConfirmPassword { get; set; } = string.Empty;
+    }
+
+}

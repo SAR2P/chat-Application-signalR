@@ -1,0 +1,11 @@
+C:\Users\DAIC\Desktop\ChatApp_SingleR\ChatModelsLibrary\bin\Debug\net8.0\ChatModelsLibrary.deps.json
+C:\Users\DAIC\Desktop\ChatApp_SingleR\ChatModelsLibrary\bin\Debug\net8.0\ChatModelsLibrary.dll
+C:\Users\DAIC\Desktop\ChatApp_SingleR\ChatModelsLibrary\bin\Debug\net8.0\ChatModelsLibrary.pdb
+C:\Users\DAIC\Desktop\ChatApp_SingleR\ChatModelsLibrary\obj\Debug\net8.0\ChatModelsLibrary.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\DAIC\Desktop\ChatApp_SingleR\ChatModelsLibrary\obj\Debug\net8.0\ChatModelsLibrary.AssemblyInfoInputs.cache
+C:\Users\DAIC\Desktop\ChatApp_SingleR\ChatModelsLibrary\obj\Debug\net8.0\ChatModelsLibrary.AssemblyInfo.cs
+C:\Users\DAIC\Desktop\ChatApp_SingleR\ChatModelsLibrary\obj\Debug\net8.0\ChatModelsLibrary.csproj.CoreCompileInputs.cache
+C:\Users\DAIC\Desktop\ChatApp_SingleR\ChatModelsLibrary\obj\Debug\net8.0\ChatModelsLibrary.dll
+C:\Users\DAIC\Desktop\ChatApp_SingleR\ChatModelsLibrary\obj\Debug\net8.0\refint\ChatModelsLibrary.dll
+C:\Users\DAIC\Desktop\ChatApp_SingleR\ChatModelsLibrary\obj\Debug\net8.0\ChatModelsLibrary.pdb
+C:\Users\DAIC\Desktop\ChatApp_SingleR\ChatModelsLibrary\obj\Debug\net8.0\ref\ChatModelsLibrary.dll
