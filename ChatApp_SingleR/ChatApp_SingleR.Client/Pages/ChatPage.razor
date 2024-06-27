@@ -1,7 +1,12 @@
 ﻿@page "/chat"
+@using ChatApp_SingleR.Client.DTOs
+@using ChatApp_SingleR.Client.Models
+@using Microsoft.AspNetCore.Authorization
+@using Microsoft.AspNetCore.Components.Authorization
+@attribute [Authorize]
+
 @using ChatApp_SingleR.Client.chatServices
 @using ChatModelsLibrary
-@using Microsoft.AspNetCore.Components.Authorization
 @using Microsoft.AspNetCore.SignalR.Client
 @using System.Security.Claims
 @inject NavigationManager navigationManager
@@ -10,6 +15,25 @@
 <PageTitle>ChatPage</PageTitle>
 
 <div class="row">
+    <div class="col-lg-2">
+        <div class="card">
+            <div class="card-header text-success">Online Users</div>
+            <div class="card-body">
+                <ul class="list-group">
+                    @if (AvailableUsers != null)
+                    {
+                        foreach (var item in AvailableUsers)
+                        {
+                            <li class="list-group-item text-success">
+                                @item.FullName
+                            </li>
+                        }
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+
     <div class="col-lg-7">
         <div class="card">
             <AuthorizeView>
@@ -59,6 +83,9 @@
 
 
 @code {
+    [CascadingParameter]
+    public Task<AuthenticationState> AuthenticationState { get; set; }
+    public List<AvailableUserDTO> AvailableUsers { get; set; } = [];
     private Chat _Chat = new();
     private HubConnection? _hubConnection;
     public List<Chat> chats { get; set; } = [];
@@ -74,14 +101,35 @@
             chats.Add(chat);
             InvokeAsync(() => StateHasChanged());
         });
+
+        _hubConnection.On<List<AvailableUserDTO>>("NotifyAllClients", (users) =>
+        {
+            AvailableUsers = users;
+            InvokeAsync(() => StateHasChanged());
+        });
+
         await _hubConnection.StartAsync();
+        await GetUsersAuthentication();
         var httpClient = new HttpClient();
         chats = await httpClient.GetFromJsonAsync<List<Chat>>("https://localhost:7196/api/chat");
+        AvailableUsers = await httpClient.GetFromJsonAsync<List<AvailableUserDTO>>("https://localhost:7196/api/chat/users");
+
     }
 
     public bool IsConnected
     => _hubConnection!.State == HubConnectionState.Connected;
 
+    private async Task GetUsersAuthentication()
+    {
+        var user = (await AuthenticationState).User;
+        if (user.Identity!.IsAuthenticated == true)
+        {
+            await _hubConnection!.SendAsync("AddAvailableUserAsync", new AvailableUser()
+                {
+                    UserId = user.Claims.FirstOrDefault(u => u.Type == ClaimTypes.NameIdentifier)!.Value
+                });
+        }
+    }
 
     public void SendChat()
     {

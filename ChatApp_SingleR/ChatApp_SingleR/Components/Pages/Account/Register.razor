@@ -75,7 +75,7 @@
                 FullName = registerModel.FullName,
                 Email = registerModel.Email,
                 PasswordHash = registerModel.Password,
-                UserName = registerModel.Email
+                UserName = registerModel.FullName
             };
 
         var result = await userManager.CreateAsync(appUser, registerModel.Password);
@@ -84,7 +84,7 @@
             Message = "Error occurd while creating the account, Please check your password contains CAPITAL WORDS And SPETIAL-CHARACTURS";
             return;
         }
-        NavManager.NavigateTo("/Account/Login");
+        NavManager.NavigateTo("/");
     }
 
 

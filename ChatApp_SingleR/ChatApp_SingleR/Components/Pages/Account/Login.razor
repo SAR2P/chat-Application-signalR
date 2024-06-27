@@ -1,4 +1,4 @@
-﻿@page "/Account/Login"
+﻿@page "/"
 
 
 
@@ -73,7 +73,7 @@
 
         await signinManager.PasswordSignInAsync
         (findUser, loginModel.password, false,false);
-        NavManager.NavigateTo("/", true);
+        NavManager.NavigateTo("/home", true);
         
     }
 

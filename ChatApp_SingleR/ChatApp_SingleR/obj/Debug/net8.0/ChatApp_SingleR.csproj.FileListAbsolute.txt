@@ -185,3 +185,4 @@ C:\Users\DAIC\Desktop\ChatApp_SingleR\ChatApp_SingleR\ChatApp_SingleR\bin\Debug\
 C:\Users\DAIC\Desktop\ChatApp_SingleR\ChatApp_SingleR\ChatApp_SingleR\bin\Debug\net8.0\Microsoft.Owin.Security.OAuth.dll
 C:\Users\DAIC\Desktop\ChatApp_SingleR\ChatApp_SingleR\ChatApp_SingleR\bin\Debug\net8.0\Newtonsoft.Json.dll
 C:\Users\DAIC\Desktop\ChatApp_SingleR\ChatApp_SingleR\ChatApp_SingleR\bin\Debug\net8.0\Owin.dll
+C:\Users\DAIC\Desktop\ChatApp_SingleR\ChatApp_SingleR\ChatApp_SingleR\obj\Debug\net8.0\ChatApp_SingleR.sourcelink.json

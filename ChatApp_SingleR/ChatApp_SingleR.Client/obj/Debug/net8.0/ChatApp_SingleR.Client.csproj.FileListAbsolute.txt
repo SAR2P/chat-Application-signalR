@@ -1085,3 +1085,4 @@ C:\Users\DAIC\Desktop\ChatApp_SingleR\ChatApp_SingleR\ChatApp_SingleR.Client\obj
 C:\Users\DAIC\Desktop\ChatApp_SingleR\ChatApp_SingleR\ChatApp_SingleR.Client\obj\Debug\net8.0\webcil\Microsoft.AspNetCore.Components.WebAssembly.Authentication.wasm
 C:\Users\DAIC\Desktop\ChatApp_SingleR\ChatApp_SingleR\ChatApp_SingleR.Client\obj\Debug\net8.0\compressed\j8vtzpdcv8.gz
 C:\Users\DAIC\Desktop\ChatApp_SingleR\ChatApp_SingleR\ChatApp_SingleR.Client\obj\Debug\net8.0\compressed\5m4ys98cr3.gz
+C:\Users\DAIC\Desktop\ChatApp_SingleR\ChatApp_SingleR\ChatApp_SingleR.Client\obj\Debug\net8.0\ChatApp_SingleR.Client.sourcelink.json

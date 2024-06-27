@@ -13,7 +13,7 @@ namespace ChatApp_SingleR.Authentication
             accountGroup.MapPost("/Logout", async (ClaimsPrincipal user, SignInManager<AppUser> signInManager) =>
             {
                 await signInManager.SignOutAsync();
-                return TypedResults.LocalRedirect("/Account");
+                return TypedResults.LocalRedirect("/");
             });
             return accountGroup;
         }

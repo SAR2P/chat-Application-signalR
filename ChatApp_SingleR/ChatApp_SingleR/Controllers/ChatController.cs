@@ -22,6 +22,8 @@ namespace ChatApp_SingleR.Controllers
             return Ok(await _chatRepo.GetAllChatsAsync());
         }
 
+        [HttpGet("users")]
+        public async Task<IActionResult> GetAvailableUsersAsync() => Ok(await _chatRepo.GetAvailableUserAsync());
 
     }
 }
