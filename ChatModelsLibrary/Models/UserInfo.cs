@@ -1,4 +1,4 @@
-﻿namespace ChatApp_SingleR.Client.Models
+﻿namespace ChatModelsLibrary.Models
 {
     public class UserInfo
     {

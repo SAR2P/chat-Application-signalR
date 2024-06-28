@@ -1,10 +1,12 @@
+using ChatApp_SingleR.Client.AppStates;
 using ChatApp_SingleR.Client.Athentication;
 using ChatApp_SingleR.Client.chatServices;
 using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
-builder.Services.AddScoped<chatService>();
+builder.Services.AddScoped<AvailableUserState>();
+builder.Services.AddScoped<MyHubConnectionService>();
 builder.Services.AddAuthorizationCore();
 builder.Services.AddCascadingAuthenticationState();
 builder.Services.AddScoped<AuthenticationStateProvider, PersistingAuthenticationStateProvider>();

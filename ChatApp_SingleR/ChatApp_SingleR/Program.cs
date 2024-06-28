@@ -1,5 +1,6 @@
 using ChatApp_SingleR.Authentication;
 using ChatApp_SingleR.chatHubs;
+using ChatApp_SingleR.Client.AppStates;
 using ChatApp_SingleR.Client.chatServices;
 using ChatApp_SingleR.Components;
 using ChatApp_SingleR.Data;
@@ -16,12 +17,12 @@ builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents()
     .AddInteractiveWebAssemblyComponents();
 
-
 builder.Services.AddDbContext<AppDBContext>(o => o.UseSqlServer(builder.Configuration.GetConnectionString("Default")));
 builder.Services.AddControllers();
 builder.Services.AddScoped<ChatRepo>();
+builder.Services.AddScoped<AvailableUserState>();
 builder.Services.AddSignalR();
-builder.Services.AddScoped<chatService>();
+builder.Services.AddScoped<MyHubConnectionService>();
 builder.Services.AddHttpClient();
 
 builder.Services.AddIdentityCore<AppUser>()

@@ -22,12 +22,12 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\DAIC\Desktop\ChatApp_SingleR\ChatApp_SingleR\ChatApp_SingleR.Client
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/DAIC/Desktop/ChatApp_SingleR/ChatApp_SingleR/ChatApp_SingleR.Client/Pages/ChatPage.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2hhdFBhZ2UucmF6b3I=
+[C:/Users/DAIC/Desktop/ChatApp_SingleR/ChatApp_SingleR/ChatApp_SingleR.Client/Pages/GroupChatPage.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcR3JvdXBDaGF0UGFnZS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/DAIC/Desktop/ChatApp_SingleR/ChatApp_SingleR/ChatApp_SingleR.Client/Pages/Counter.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291bnRlci5yYXpvcg==
+[C:/Users/DAIC/Desktop/ChatApp_SingleR/ChatApp_SingleR/ChatApp_SingleR.Client/Pages/IndividualChatPage.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kaXZpZHVhbENoYXRQYWdlLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/DAIC/Desktop/ChatApp_SingleR/ChatApp_SingleR/ChatApp_SingleR.Client/_Imports.razor]

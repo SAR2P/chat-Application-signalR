@@ -1,6 +1,5 @@
 ﻿using ChatApp_SingleR.Authentication;
-using ChatApp_SingleR.Client.Models;
-using ChatModelsLibrary;
+using ChatModelsLibrary.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
@@ -13,9 +12,11 @@ namespace ChatApp_SingleR.Data
             
         }
 
-        public DbSet<Chat> Chats { get; set; }
+        public DbSet<GroupChat> GropChats { get; set; }
 
         public DbSet<AvailableUser> AvailableUsers { get; set; }
+
+        public DbSet<IndividualChat> IndividualChats { get; set; }
 
     }
 }

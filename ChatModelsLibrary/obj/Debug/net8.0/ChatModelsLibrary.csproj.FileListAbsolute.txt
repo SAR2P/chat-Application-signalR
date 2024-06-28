@@ -9,3 +9,4 @@ C:\Users\DAIC\Desktop\ChatApp_SingleR\ChatModelsLibrary\obj\Debug\net8.0\ChatMod
 C:\Users\DAIC\Desktop\ChatApp_SingleR\ChatModelsLibrary\obj\Debug\net8.0\refint\ChatModelsLibrary.dll
 C:\Users\DAIC\Desktop\ChatApp_SingleR\ChatModelsLibrary\obj\Debug\net8.0\ChatModelsLibrary.pdb
 C:\Users\DAIC\Desktop\ChatApp_SingleR\ChatModelsLibrary\obj\Debug\net8.0\ref\ChatModelsLibrary.dll
+C:\Users\DAIC\Desktop\ChatApp_SingleR\ChatModelsLibrary\obj\Debug\net8.0\ChatModelsLibrary.sourcelink.json

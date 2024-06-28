@@ -91,7 +91,7 @@ namespace ChatApp_SingleR.Migrations
                     b.ToTable("AspNetUsers", (string)null);
                 });
 
-            modelBuilder.Entity("ChatApp_SingleR.Client.Models.AvailableUser", b =>
+            modelBuilder.Entity("ChatModelsLibrary.Models.AvailableUser", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -112,7 +112,7 @@ namespace ChatApp_SingleR.Migrations
                     b.ToTable("AvailableUsers");
                 });
 
-            modelBuilder.Entity("ChatModelsLibrary.Chat", b =>
+            modelBuilder.Entity("ChatModelsLibrary.Models.GroupChat", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -127,13 +127,35 @@ namespace ChatApp_SingleR.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("UserName")
+                    b.Property<string>("SenderId")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Chats");
+                    b.ToTable("GropChats");
+                });
+
+            modelBuilder.Entity("ChatModelsLibrary.Models.IndividualChat", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Message")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SenderId")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("date")
+                        .HasColumnType("date");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("IndividualChats");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
